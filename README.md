@@ -1,4 +1,4 @@
-# Curso do Erick Wendel de node
+# Curso NODEBR
 
 Estudando callbacks, promises e assincronismo.
 
