@@ -11,6 +11,10 @@
  *  REJECT - when get an error
  */
 
+/* 
+ *  Promisify is useful to transform a function callback in promise
+ *  nevertheless doesn't work in any situations.
+ */
 const util = require('util');
 const getAddressAsync = util.promisify(getAddress);
 
