@@ -32,7 +32,6 @@ const user = getUser(
     console.log('error: ', userError);
     return;
   }
-  console.log(user);
 
   getPhoneNumber(user.id, function resolvePhone(phoneError, phone){
     if(phoneError){
@@ -40,18 +39,22 @@ const user = getUser(
       return;
     }
 
+
+    getAddress(user.id, function resolveAddress(addressError, address){
+      if(addressError){
+        console.log('error: ', addressError);
+        return;
+      }
+  
+      console.log(`
+        name: ${user.name},
+        phone: (${phone.ddd}) ${phone.phone},
+        address: ${address.street}
+      `
+      );
+    })
+
   })
 
-  getAddress(user.id, function resolveAddress(addressError, address){
-    if(addressError){
-      console.log('error: ', addressError);
-      return;
-    }
-
-    console.log(`name: ${user.name},
-    phone: ${phone.ddd}`);
-  })
+  
 });
-// const phone = getPhoneNumber(user.id);
-
-// console.log('phone', phone);
