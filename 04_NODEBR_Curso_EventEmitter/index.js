@@ -32,6 +32,9 @@ event.on(eventName, function(click){
 //   event.emit(eventName, 'clicked' + (count++));
 // }, 1000);
 
+/**
+ * Catch typed content and emit a console.log
+ */
 const stdin = process.openStdin();
 stdin.addListener('data', function(value){
   console.log(`you has typed: ${value.toString().trim()}`);
